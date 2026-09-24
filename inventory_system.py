@@ -18,7 +18,7 @@ from typing import Callable, Iterator, Sequence, TypeVar
 
 
 # Little-endian, standard sizes, no implicit alignment.
-ITEM_STRUCT = struct.Struct("<II32s24s12sIIfB3x")
+ITEM_STRUCT = struct.Struct("<II64s24s12sIIfB3x")
 CATEGORY_STRUCT = struct.Struct("<I64s80sB3x")
 LOG_STRUCT = struct.Struct("<QIBIIf32s16sB3x")
 
@@ -142,7 +142,7 @@ class Item:
         return ITEM_STRUCT.pack(
             self.item_id,
             self.category_id,
-            encode_fixed(self.name, 32),
+            encode_fixed(self.name, 64),
             encode_fixed(self.unit, 24),
             encode_fixed(self.location, 12),
             self.quantity,

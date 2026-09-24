@@ -36,7 +36,7 @@ class InventorySystemTests(unittest.TestCase):
         return Item(item_id, 1, "ปากกาลูกลื่น", "ด้าม", "A-01", quantity, 3, 15.5)
 
     def test_struct_sizes_are_fixed_and_little_endian(self):
-        self.assertEqual(ITEM_STRUCT.size, 92)
+        self.assertEqual(ITEM_STRUCT.size, 124)
         self.assertEqual(CATEGORY_STRUCT.size, 152)
         self.assertEqual(LOG_STRUCT.size, 77)
         self.assertEqual(struct.pack("<I", 1), b"\x01\x00\x00\x00")

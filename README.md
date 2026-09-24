@@ -6,7 +6,7 @@
 
 | ไฟล์ | Struct format | ขนาดต่อระเบียน |
 |---|---|---:|
-| `data/items.dat` | `<II32s24s12sIIfB3x` | 92 bytes |
+| `data/items.dat` | `<II64s24s12sIIfB3x` | 124 bytes |
 | `data/categories.dat` | `<I64s80sB3x` | 152 bytes |
 | `data/transactions.dat` | `<QIBIIf32s16sB3x` | 77 bytes |
 
