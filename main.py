@@ -279,7 +279,7 @@ def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(description="ระบบคลังพัสดุแบบ fixed-length binary records")
     parser.add_argument("--data-dir", type=Path, default=Path("data"), help="โฟลเดอร์ไฟล์ .dat")
     parser.add_argument(
-        "--report", type=Path, default=Path("inventory_report.txt"), help="ตำแหน่งไฟล์รายงาน"
+        "--report", type=Path, default=Path("report.txt"), help="ตำแหน่งไฟล์รายงาน"
     )
     parser.add_argument(
         "--init-only", action="store_true", help="สร้างไฟล์ข้อมูลและรายงานเริ่มต้นแล้วจบการทำงาน"

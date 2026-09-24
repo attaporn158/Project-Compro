@@ -83,13 +83,28 @@ class InventorySystemTests(unittest.TestCase):
         with self.assertRaises(StorageCorruptionError):
             InventoryStorage(self.root / "data")
 
-    def test_report_contains_summary_and_recent_operations(self):
+    def test_report_contains_summary_and_aligned_tables(self):
         self.store.add_item(self.sample_item(), operator="admin")
-        report = generate_report(self.store, self.root / "inventory_report.txt")
+        report = generate_report(self.store, self.root / "report.txt")
         text = report.read_text(encoding="utf-8")
         self.assertIn("Active Items", text)
-        self.assertIn("RECENT OPERATIONS", text)
-        self.assertIn("ADD", text)
+        self.assertNotIn("RECENT OPERATIONS", text)
+
+        # Verify every generated table independently.  Thai combining marks
+        # must not make any data row wider or narrower than its border.
+        current_table = []
+        completed_tables = []
+        for line in text.splitlines():
+            if line.startswith("┌"):
+                current_table = [line]
+            elif current_table:
+                current_table.append(line)
+                if line.startswith("└"):
+                    completed_tables.append(current_table)
+                    current_table = []
+        self.assertEqual(len(completed_tables), 5)
+        for table in completed_tables:
+            self.assertEqual(len({display_width(line) for line in table}), 1)
 
     def test_unicode_table_rows_have_equal_display_width(self):
         table = render_table(

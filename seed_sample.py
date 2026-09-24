@@ -10,7 +10,7 @@ from inventory_system import Category, InventoryStorage, Item, generate_report
 
 
 DATA_DIR = Path("data")
-REPORT_PATH = Path("inventory_report.txt")
+REPORT_PATH = Path("report.txt")
 OPERATOR = "SAMPLE_ADMIN"
 
 

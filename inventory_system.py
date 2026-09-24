@@ -677,32 +677,6 @@ def generate_report(storage: InventoryStorage, output_path: str | Path) -> Path:
         ("right", "left", "right"),
     )
 
-    recent = storage.logs(limit=10)
-    history_rows: list[tuple[object, ...]] = []
-    if recent:
-        for log in reversed(recent):
-            stamp = datetime.fromtimestamp(log.timestamp).astimezone().strftime("%Y-%m-%d %H:%M:%S")
-            history_rows.append(
-                (
-                    f"#{log.log_seq:06d}",
-                    stamp,
-                    OPERATION_NAMES.get(log.op_code, "?"),
-                    log.item_id,
-                    log.quantity,
-                    f"{log.balance:,.0f}",
-                    log.operator,
-                    log.note,
-                )
-            )
-    else:
-        history_rows.append(("-", "-", "-", "-", "-", "-", "ไม่มีประวัติ", "-"))
-    history_table = render_table(
-        ("Seq", "Date / Time", "Operation", "ItemID", "Qty", "Balance", "Operator", "Note"),
-        history_rows,
-        (8, 19, 9, 8, 8, 10, 14, 14),
-        ("right", "left", "center", "right", "right", "right", "left", "left"),
-    )
-
     lines = [
         "=" * 90,
         "INVENTORY MANAGEMENT SYSTEM - SUMMARY REPORT".center(90),
@@ -721,9 +695,6 @@ def generate_report(storage: InventoryStorage, output_path: str | Path) -> Path:
         "",
         "ITEMS BY CATEGORY (ACTIVE ONLY)",
         category_table,
-        "",
-        "RECENT OPERATIONS (LATEST 10)",
-        history_table,
     ]
 
     with output.open("w", encoding="utf-8", newline="\n") as stream:
