@@ -5,7 +5,7 @@
 ┌──────────────────────┬──────────────────────────────────────────────────────────────────┐
 │  System Information  │                              Value                               │
 ├──────────────────────┼──────────────────────────────────────────────────────────────────┤
-│ Generated At         │ 2026-09-24T19:00:34+07:00                                        │
+│ Generated At         │ 2026-09-25T22:02:51+07:00                                        │
 │ App Version          │ 1.0                                                              │
 │ Endianness           │ Little-Endian (<)                                                │
 │ Encoding             │ UTF-8 fixed-length binary records                                │
@@ -28,35 +28,28 @@ INVENTORY RECORDS
 │     1010 │        5 │ โต๊ะทำงาน                 │ ตัว         │ C-01-R02     │          0 │       3,500.00 │  Deleted  │
 └──────────┴──────────┴──────────────────────────┴────────────┴──────────────┴────────────┴────────────────┴───────────┘
 
-SUMMARY
-┌──────────────────────────────┬────────────────────┬────────────┐
-│           Summary            │       Value        │    Unit    │
-├──────────────────────────────┼────────────────────┼────────────┤
-│ Total Items (Records)        │                 10 │ records    │
-│ Active Items                 │                  9 │ records    │
-│ Deleted Items                │                  1 │ records    │
-│ Free Slots                   │                  1 │ slots      │
-│ Total Quantity               │                306 │ units      │
-│ Low-Stock Items              │                  1 │ records    │
-│ Total Inventory Value        │          49,865.00 │ THB        │
-└──────────────────────────────┴────────────────────┴────────────┘
+Summary (นับตามสถานะของระเบียน)
+- Total Items (Records) : 10
+- Active Items          : 9
+- Deleted Items         : 1
+- Total Quantity        : 306
+- Free Slots            : 1
+- Low-Stock Items       : 1
+- Total Inventory Value : 49,865.00 THB
 
-PRICE STATISTICS (ACTIVE ONLY)
-┌──────────────────────────────┬────────────────────┬────────────┐
-│       Price Statistics       │       Value        │    Unit    │
-├──────────────────────────────┼────────────────────┼────────────┤
-│ Minimum                      │               8.00 │ THB        │
-│ Maximum                      │           4,500.00 │ THB        │
-│ Average                      │             801.44 │ THB        │
-└──────────────────────────────┴────────────────────┴────────────┘
+Price Statistics (Active only)
+- Min : 8.00 THB
+- Max : 4,500.00 THB
+- Avg : 801.44 THB
 
-ITEMS BY CATEGORY (ACTIVE ONLY)
-┌──────────────┬──────────────────────────────────┬────────────────┐
-│ Category ID  │          Category Name           │  Active Items  │
-├──────────────┼──────────────────────────────────┼────────────────┤
-│            1 │ เครื่องเขียน                        │              2 │
-│            2 │ อุปกรณ์สำนักงาน                     │              2 │
-│            3 │ อุปกรณ์อิเล็กทรอนิกส์                  │              2 │
-│            4 │ อุปกรณ์คอมพิวเตอร์                   │              2 │
-│            5 │ เฟอร์นิเจอร์                        │              1 │
-└──────────────┴──────────────────────────────────┴────────────────┘
+Inventory Value Statistics (Active only)
+- Total Quantity : 306
+- Total Value    : 49,865.00 THB
+- Average Value  : 5,540.56 THB/item
+
+Items by Category (Active only)
+- เครื่องเขียน       : 2
+- อุปกรณ์สำนักงาน    : 2
+- อุปกรณ์อิเล็กทรอนิกส์ : 2
+- อุปกรณ์คอมพิวเตอร์  : 2
+- เฟอร์นิเจอร์       : 1
